@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 
 import { TransportService } from '../shared/transport.service';
+import { ILocation } from '../shared/location';
 
 @Component({
   selector: 'hs-location-search',
@@ -10,31 +12,27 @@ import { TransportService } from '../shared/transport.service';
   styleUrls: ['./location-search.component.css']
 })
 export class LocationSearchComponent implements OnInit {
-  locationSearchForm: FormGroup;
-  filteredResults: any;
+  locationCtrl: FormControl;
+  locationList: Observable<ILocation[]>;
+  @Output() selectedLocation: EventEmitter<ILocation> = new EventEmitter();
 
   constructor(
-    private ts: TransportService,
-    private fb: FormBuilder
-  ) {
-    this.locationSearchForm = this.fb.group({
-      input: ['', Validators.required]
+    private ts: TransportService
+  ) { }
+
+  ngOnInit() {
+    this.locationCtrl = new FormControl(null, Validators.required);
+    this.locationCtrl.valueChanges.subscribe(value => {
+      this.findLocation();
     });
   }
 
-  ngOnInit() {
-    this.locationSearchForm.controls['input'].valueChanges
-      .startWith(null)
-      .map(value => {
-        console.log(value);
-        this.ts.searchForLocation(this.locationSearchForm.controls['input'].value)
-        .subscribe(res => this.filteredResults = res);
-      });
+  displaySelectedLocation(l?: ILocation): string {
+    if (!l) { return ''; }
+    return l.name;
   }
 
   findLocation() {
-    this.ts.searchForLocation(this.locationSearchForm.controls['input'].value)
-      .subscribe(res => console.log(res));
+    this.locationList = this.ts.searchForLocation(this.locationCtrl.value);
   }
-
 }
