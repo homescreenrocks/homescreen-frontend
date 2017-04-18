@@ -1,4 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+<nav md-tab-nav-bar>
+  <a md-tab-link
+     *ngFor="let link of navLinks"
+     [routerLink]="link.href"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{ link.label }}
+  </a>
+</nav>
+
+<p></p>
+
 <router-outlet></router-outlet>

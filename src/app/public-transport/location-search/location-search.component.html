@@ -1,0 +1,14 @@
+<form [formGroup]="locationSearchForm">
+  <md-input-container class="example-full-width">
+    <input mdInput
+    formControlName="input" placeholder="Station oder Adresse">
+  </md-input-container>
+
+  <md-autocomplete #auto="mdAutocomplete">
+    <md-option *ngFor="let result of results | async" [value]="result">
+      {{ result.name }}
+    </md-option>
+  </md-autocomplete>
+
+  <button md-raised-button (click)="findLocation()">Prüfen</button>
+</form>

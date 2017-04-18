@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hs works!';
+  navLinks = [
+    { label: 'Home', href: '' },
+    { label: 'VBB', href: 'public-transport' }
+  ];
 }
