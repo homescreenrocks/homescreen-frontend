@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { OverviewComponent } from './overview/overview.component';
-import { ConnectionSearchComponent } from './connection-search/connection-search.component';
+import { RoutesSearchComponent } from './routes-search/routes-search.component';
 
 const routes: Routes = [
   {
@@ -9,8 +9,8 @@ const routes: Routes = [
     component: OverviewComponent
   },
   {
-    path: 'connection',
-    component: ConnectionSearchComponent
+    path: 'routes',
+    component: RoutesSearchComponent
   }
 ];
 

@@ -8,7 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PublicTransportRoutingModule } from './public-transport-routing.module';
 import { TransportService } from './shared/transport.service';
 import { PublicTransportComponent } from './public-transport.component';
-import { ConnectionSearchComponent } from './connection-search/connection-search.component';
+import { RoutesSearchComponent } from './routes-search/routes-search.component';
 import { LocationSearchComponent } from './location-search/location-search.component';
 import { OverviewComponent } from './overview/overview.component';
 
@@ -21,7 +21,7 @@ import { OverviewComponent } from './overview/overview.component';
     FlexLayoutModule,
     PublicTransportRoutingModule
   ],
-  declarations: [PublicTransportComponent, ConnectionSearchComponent, LocationSearchComponent, OverviewComponent],
+  declarations: [PublicTransportComponent, RoutesSearchComponent, LocationSearchComponent, OverviewComponent],
   providers: [TransportService]
 })
 export class PublicTransportModule { }

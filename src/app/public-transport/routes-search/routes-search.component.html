@@ -1,0 +1,45 @@
+<div fxLayout="row" fxLayoutAlign="space-between start">
+  <div fxFlex="50">
+    <hs-location-search (selectedLocation)="setLocation($event, 'from')" [title]="'Abfahrt'"></hs-location-search>
+  </div>
+  <div fxFlex="50">
+    <hs-location-search (selectedLocation)="setLocation($event, 'to')" [title]="'Ankunft'"></hs-location-search>
+  </div>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between start" *ngIf="from && to">
+  <div fxFlex="100">
+    <md-card>
+      <md-card-header>
+        <md-card-title>Verbindungen</md-card-title>
+      </md-card-header>
+      <md-card-content>
+
+        <md-list *ngFor="let route of routes$ | async as routes; last as l">
+          <h3 md-subheader>
+            <span class="departure">Abfahrt: {{ route.start | date:'shortTime' }}</span>
+            <span class="arrival">Ankunft: {{ route.end | date:'shortTime' }}</span>
+          </h3>
+          <md-list-item *ngFor="let part of route.parts">
+            <md-icon md-list-icon>folder</md-icon>
+            <h4 md-line>
+              <span>
+                <md-chip>ab: {{ part.start | date:'shortTime' }}</md-chip> {{ part.from.name }}
+              </span>
+            </h4>
+            <h4 md-line>&darr;</h4>
+            <h4 md-line>
+              <span>
+                <md-chip>an: {{ part.end | date:'shortTime' }}</md-chip> {{ part.to.name }}
+              </span>
+            </h4>
+            <p md-line *ngIf="part.direction">Richtung {{ part.direction }}</p>
+          </md-list-item>
+          <md-divider *ngIf="!l"></md-divider>
+        </md-list>
+        <md-divider></md-divider>
+
+      </md-card-content>
+    </md-card>
+  </div>
+</div>
