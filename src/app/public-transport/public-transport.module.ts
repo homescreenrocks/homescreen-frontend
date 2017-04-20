@@ -11,6 +11,8 @@ import { PublicTransportComponent } from './public-transport.component';
 import { RoutesSearchComponent } from './routes-search/routes-search.component';
 import { LocationSearchComponent } from './location-search/location-search.component';
 import { OverviewComponent } from './overview/overview.component';
+import { RouteDetailsComponent } from './route-details/route-details.component';
+import { ServiceIconRowComponent } from './service-icon-row/service-icon-row.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,7 @@ import { OverviewComponent } from './overview/overview.component';
     FlexLayoutModule,
     PublicTransportRoutingModule
   ],
-  declarations: [PublicTransportComponent, RoutesSearchComponent, LocationSearchComponent, OverviewComponent],
+  declarations: [PublicTransportComponent, RoutesSearchComponent, LocationSearchComponent, OverviewComponent, RouteDetailsComponent, ServiceIconRowComponent],
   providers: [TransportService]
 })
 export class PublicTransportModule { }

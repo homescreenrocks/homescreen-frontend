@@ -1,5 +1,5 @@
 import { ILocation } from './location';
-import { IProduct } from './product';
+import { IProductDetail } from './product-detail';
 
 export interface IRoute {
   start: Date;
@@ -13,6 +13,7 @@ export interface IRoute {
     end: Date;
     from: ILocation;
     to: ILocation;
-    product: IProduct
+    product?: IProductDetail;
+    walking?: boolean;
   }];
 }

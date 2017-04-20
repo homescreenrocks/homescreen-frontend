@@ -13,33 +13,37 @@
       <md-card-header>
         <md-card-title>Verbindungen</md-card-title>
       </md-card-header>
-      <md-card-content>
+      <md-card-content *ngFor="let route of routes$ | async as routes; last as l; index as i">
 
-        <md-list *ngFor="let route of routes$ | async as routes; last as l">
-          <h3 md-subheader>
-            <span class="departure">Abfahrt: {{ route.start | date:'shortTime' }}</span>
-            <span class="arrival">Ankunft: {{ route.end | date:'shortTime' }}</span>
-          </h3>
-          <md-list-item *ngFor="let part of route.parts">
-            <md-icon md-list-icon>folder</md-icon>
-            <h4 md-line>
-              <span>
-                <md-chip>ab: {{ part.start | date:'shortTime' }}</md-chip> {{ part.from.name }}
-              </span>
-            </h4>
-            <h4 md-line>&darr;</h4>
-            <h4 md-line>
-              <span>
-                <md-chip>an: {{ part.end | date:'shortTime' }}</md-chip> {{ part.to.name }}
-              </span>
-            </h4>
-            <p md-line *ngIf="part.direction">Richtung {{ part.direction }}</p>
-          </md-list-item>
-          <md-divider *ngIf="!l"></md-divider>
-        </md-list>
-        <md-divider></md-divider>
+        <div fxLayout="row" (click)="showDetails(i)">
+          <div fxFlex="3" fxFlexAlign="center">
+            >
+          </div>
+          <div fxFlex fxFlexAlign="center">
+            <h4>{{ route.from.name }}</h4>
+            <h4>{{ route.to.name }}</h4>
+          </div>
+          <div fxFlex="10" fxFlexAlign="center">
+            <p>ab {{ route.start | date:'shortTime' }}</p>
+            <p>an {{ route.end | date:'shortTime' }}</p>
+          </div>
+          <div fxFlex="8" fxFlexAlign="center">
+            Verspätung: {{ route.delay / 60000 }} min
+          </div>
+          <div fxFlex="10" fxFlexAlign="center">
+            Dauer: DIFF
+          </div>
+          <div fxFlex="20" fxFlexAlign="center">
+            <hs-service-icon-row [products]="getAllProducts(route)"></hs-service-icon-row>
+          </div>
+        </div>
+
+        <hs-route-details *ngIf="i == detailView" [route]="route"></hs-route-details>
+
+        <hr>
 
       </md-card-content>
     </md-card>
   </div>
 </div>
+

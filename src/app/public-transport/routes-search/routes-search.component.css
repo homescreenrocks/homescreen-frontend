@@ -1,3 +1,12 @@
 span.arrival{
   float: right;
 }
+
+.service-icon {
+  width: 40px;
+  float: right;
+}
+
+.route-departure {
+  clear: both;
+}

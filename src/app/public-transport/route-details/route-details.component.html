@@ -1,0 +1,19 @@
+<div fxLayout="row" *ngFor="let part of route.parts">
+  <div fxFlex fxFlexAlign="center">
+    <h4>{{ part.from.name }}</h4>
+    <h4>{{ part.to.name }}</h4>
+  </div>
+  <div fxFlex="10" fxFlexAlign="center">
+    <p>ab {{ part.start | date:'shortTime' }}</p>
+    <p>an {{ part.end | date:'shortTime' }}</p>
+  </div>
+  <div fxFlex="8" fxFlexAlign="center">
+    Verspätung: {{ part.delay / 60000 }} min
+  </div>
+  <div fxFlex="10" fxFlexAlign="center">
+    Dauer: DIFF
+  </div>
+  <div fxFlex="20" fxFlexAlign="center">
+    <!--<hs-service-icon-row [products]="route.products"></hs-service-icon-row>-->
+  </div>
+</div>
