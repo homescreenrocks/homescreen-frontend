@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   navLinks = [
     { label: 'Home', href: 'home' },
-    { label: 'VBB', href: 'public-transport' }
+    { label: 'VBB Fahrinfo', href: 'public-transport' }
   ];
 }

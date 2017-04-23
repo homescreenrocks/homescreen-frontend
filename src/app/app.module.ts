@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AgmCoreModule } from '@agm/core';
 import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +27,10 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    PublicTransportModule
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBtI-4OZ7Kd4vNDGp-3d5rpATk8htQH6CQ'
+    }),
+    PublicTransportModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
