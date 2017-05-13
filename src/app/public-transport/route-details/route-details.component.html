@@ -1,19 +1,28 @@
-<div fxLayout="row" *ngFor="let part of route.parts">
-  <div fxFlex fxFlexAlign="center">
-    <h4>{{ part.from.name }}</h4>
-    <h4>{{ part.to.name }}</h4>
-  </div>
-  <div fxFlex="10" fxFlexAlign="center">
-    <p>ab {{ part.start | date:'shortTime' }}</p>
-    <p>an {{ part.end | date:'shortTime' }}</p>
-  </div>
-  <div fxFlex="8" fxFlexAlign="center">
-    Verspätung: {{ part.delay / 60000 }} min
-  </div>
-  <div fxFlex="10" fxFlexAlign="center">
-    Dauer: DIFF
-  </div>
-  <div fxFlex="20" fxFlexAlign="center">
-    <!--<hs-service-icon-row [products]="route.products"></hs-service-icon-row>-->
-  </div>
+<div class="timeline-container">
+   <div class="timeline timeline-right" *ngFor="let part of route.parts">
+      <div class="marker"></div>
+      <div class="timeline-content">
+         <div fxLayout="row">
+          <div fxFlex fxFlexAlign="center">
+            <h4>{{ part.from.name }}</h4>
+            <h4>{{ part.to.name }}</h4>
+          </div>
+          <div fxFlex="12" fxFlexAlign="center">
+            <p>ab {{ part.start | date:'shortTime' }}</p>
+            <p>an {{ part.end | date:'shortTime' }}</p>
+          </div>
+          <div fxFlex="12" fxFlexAlign="center">
+            <p>Verspätung:</p>
+            <p>{{ part.delay / 60000 }} min</p>
+          </div>
+          <div fxFlex="12" fxFlexAlign="center">
+            <p>Dauer:</p>
+            <p>{{ getDuration(part.start, part.end) }}</p>
+          </div>
+          <div fxFlex="20" fxFlexAlign="center">
+            <!--<hs-service-icon-row [products]="route.products"></hs-service-icon-row>-->
+          </div>
+        </div>
+      </div>
+   </div>
 </div>

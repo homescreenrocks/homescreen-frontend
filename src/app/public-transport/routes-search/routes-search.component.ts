@@ -5,6 +5,7 @@ import { TransportService } from '../shared/transport.service';
 import { ILocation } from '../shared/location';
 import { IRoute } from '../shared/route';
 import { IProduct } from '../shared/product';
+import { DurationService } from '../shared/duration.service';
 
 @Component({
   selector: 'hs-routes-search',
@@ -52,6 +53,10 @@ export class RoutesSearchComponent implements OnInit {
     });
 
     return product;
+  }
+
+  getDuration(start: Date, end: Date): string {
+    return DurationService.getDuration(start, end);
   }
 
 }

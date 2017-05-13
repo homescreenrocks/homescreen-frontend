@@ -1,3 +1,7 @@
+i.red {
+  color: #e20619;
+}
+
 span.arrival{
   float: right;
 }
@@ -9,4 +13,8 @@ span.arrival{
 
 .route-departure {
   clear: both;
+}
+
+.dashed {
+  border-bottom: 2px dotted #333333;
 }

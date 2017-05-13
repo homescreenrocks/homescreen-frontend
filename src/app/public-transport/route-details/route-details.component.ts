@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { IRoute } from '../shared/route';
+import { DurationService } from '../shared/duration.service';
 
 @Component({
   selector: 'hs-route-details',
@@ -14,6 +15,10 @@ export class RouteDetailsComponent implements OnInit {
 
   ngOnInit() {
     console.log(this.route);
+  }
+
+  getDuration(start: Date, end: Date): string {
+    return DurationService.getDuration(start, end);
   }
 
 }

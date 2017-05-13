@@ -1,8 +1,3 @@
-.header-image > img {
-  width: 40px;
-  height: 40px;
-}
-
 div.card-map {
   width: calc(100% + 48px);
   height: 250px;
