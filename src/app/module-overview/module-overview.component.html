@@ -1,15 +1,13 @@
 <div fxLayout="row" class="colored box">
-  <div fxFlex="33" fxFlexOffset="2">
+  <div fxFlex fxFlexOffset="2">
     <md-card class="example-card">
       <md-card-header>
-        <div md-card-avatar class="header-image">
-          <img src="/assets/vbb.png">
-        </div>
+        <img md-card-avatar src="/assets/vbb.png">
         <md-card-title>VBB Fahrinfo</md-card-title>
-        <md-card-subtitle>Nach Verbindungen suchen</md-card-subtitle>
+        <md-card-subtitle>Öffentliche Verkehrsverbindungen</md-card-subtitle>
       </md-card-header>
-      <div class="card-map">
-        <agm-map [latitude]="52.5261035" [longitude]="13.303747199999975" [disableDefaultUI]="false" [zoomControl]="false" [zoom]="13"></agm-map>
+      <div class="card-map" *ngIf="position">
+        <agm-map [latitude]="position.coords.latitude" [longitude]="position.coords.longitude" [disableDefaultUI]="false" [zoomControl]="false" [zoom]="13"></agm-map>
       </div>
       <md-card-actions>
         <button md-button routerLink="/public-transport/routes">Verbindungssuche</button>
@@ -17,6 +15,4 @@
       </md-card-actions>
     </md-card>
   </div>
-  <div fxFlex="33" fxFlexOffset="2">  Card2  </div>
-  <div fxFlex fxFlexOffset="2">  Card3  </div>
 </div>

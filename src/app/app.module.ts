@@ -11,6 +11,7 @@ import 'hammerjs';
 import { AppRoutingModule } from './app-routing.module';
 import { PublicTransportModule } from './public-transport/public-transport.module';
 import { ModuleOverviewComponent } from './module-overview/module-overview.component';
+import { GeoLocationService } from './shared/geo-location.service';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -32,7 +33,7 @@ import { AppComponent } from './app.component';
     }),
     PublicTransportModule,
   ],
-  providers: [],
+  providers: [GeoLocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

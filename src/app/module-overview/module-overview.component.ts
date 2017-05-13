@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeoLocationService } from '../shared/geo-location.service';
 
 @Component({
   selector: 'hs-module-overview',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./module-overview.component.css']
 })
 export class ModuleOverviewComponent implements OnInit {
+  position: Position;
 
-  constructor() { }
+  constructor(
+    public gls: GeoLocationService
+  ) { }
 
   ngOnInit() {
+    this.gls.getCurrentPosition()
+      .subscribe(pos => this.position = pos);
   }
 
 }
