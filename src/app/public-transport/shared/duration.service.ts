@@ -3,9 +3,10 @@ import * as moment from 'moment';
 
 @Injectable()
 export class DurationService {
-  static getDuration(start: Date, end: Date): string {
+  static getDuration(start: number, end: number): number {
     const startTime = moment(start);
     const endTime = moment(end);
-    return moment.duration(endTime.diff(startTime)).humanize();
+    console.log(startTime, endTime, moment.duration(endTime.diff(startTime)));
+    return moment.duration(endTime.diff(startTime)).asMinutes() * 1000;
   }
 }

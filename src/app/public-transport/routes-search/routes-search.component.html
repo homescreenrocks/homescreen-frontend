@@ -22,17 +22,13 @@
             <h4>{{ route.from.name }}</h4>
             <h4>{{ route.to.name }}</h4>
           </div>
-          <div fxFlex="12" fxFlexAlign="center">
+          <div fxFlex="15" fxFlexAlign="center">
             <p>ab {{ route.start | date:'shortTime' }}</p>
             <p>an {{ route.end | date:'shortTime' }}</p>
           </div>
-          <div fxFlex="12" fxFlexAlign="center">
-            <p>Verspätung:</p>
-            <p>{{ route.delay / 60000 }} min</p>
-          </div>
-          <div fxFlex="12" fxFlexAlign="center">
+          <div fxFlex="15" fxFlexAlign="center">
             <p>Dauer:</p>
-            <p>{{ getDuration(route.start, route.end) }}</p>
+            <p>{{ getDuration(route.start, route.end) }} Min.</p>
           </div>
           <div fxFlex="20" fxFlexAlign="center">
             <hs-service-icon-row [products]="getAllProducts(route)"></hs-service-icon-row>

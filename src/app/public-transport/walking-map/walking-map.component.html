@@ -1,0 +1,11 @@
+<h4>Fußweg</h4>
+<agm-map [latitude]="lat" [longitude]="lon">
+  <agm-polyline>
+    <agm-polyline-point [latitude]="from.latitude" [longitude]="from.longitude">
+    </agm-polyline-point>
+    <agm-polyline-point [latitude]="to.latitude" [longitude]="to.longitude">
+    </agm-polyline-point>
+  </agm-polyline>
+</agm-map>
+From:<br/>{{ from | json }}
+To:  <br/>{{ to | json }}

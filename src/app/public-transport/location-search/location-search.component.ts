@@ -13,6 +13,7 @@ import { ILocation } from '../shared/location';
 })
 export class LocationSearchComponent implements OnInit {
   @Input() title: string;
+  @Input() type?: string;
   @Output() selectedLocation: EventEmitter<ILocation> = new EventEmitter();
   locationCtrl: FormControl;
   locationList$: Observable<ILocation[]>;
@@ -37,7 +38,11 @@ export class LocationSearchComponent implements OnInit {
   }
 
   findLocation() {
-    this.locationList$ = this.ts.searchForLocation(this.locationCtrl.value);
+    if (this.type && this.type === 'station') {
+      this.locationList$ = this.ts.searchForStation(this.locationCtrl.value);
+    } else {
+      this.locationList$ = this.ts.searchForLocation(this.locationCtrl.value);
+    }
   }
 
 }

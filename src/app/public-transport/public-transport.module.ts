@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AgmCoreModule } from '@agm/core';
 
 import { PublicTransportRoutingModule } from './public-transport-routing.module';
 import { TransportService } from './shared/transport.service';
@@ -13,6 +14,8 @@ import { LocationSearchComponent } from './location-search/location-search.compo
 import { OverviewComponent } from './overview/overview.component';
 import { RouteDetailsComponent } from './route-details/route-details.component';
 import { ServiceIconRowComponent } from './service-icon-row/service-icon-row.component';
+import { WalkingMapComponent } from './walking-map/walking-map.component';
+import { DepartureSearchComponent } from './departure-search/departure-search.component';
 
 @NgModule({
   imports: [
@@ -21,9 +24,21 @@ import { ServiceIconRowComponent } from './service-icon-row/service-icon-row.com
     HttpModule,
     MaterialModule,
     FlexLayoutModule,
-    PublicTransportRoutingModule
+    PublicTransportRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBtI-4OZ7Kd4vNDGp-3d5rpATk8htQH6CQ'
+    })
   ],
-  declarations: [PublicTransportComponent, RoutesSearchComponent, LocationSearchComponent, OverviewComponent, RouteDetailsComponent, ServiceIconRowComponent],
+  declarations: [
+    PublicTransportComponent,
+    RoutesSearchComponent,
+    LocationSearchComponent,
+    OverviewComponent,
+    RouteDetailsComponent,
+    ServiceIconRowComponent,
+    WalkingMapComponent,
+    DepartureSearchComponent
+  ],
   providers: [TransportService]
 })
 export class PublicTransportModule { }

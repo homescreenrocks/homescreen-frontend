@@ -1,10 +1,10 @@
 import { IProduct } from './product';
 
 export interface ILocation {
-  id: number;
+  id?: number;
   name: string;
   latitude: number;
   longitude: number;
-  type: string;
+  type: 'address' | 'location';
   products?: IProduct;
 }

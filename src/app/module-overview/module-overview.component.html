@@ -1,5 +1,5 @@
 <div fxLayout="row" class="colored box">
-  <div fxFlex fxFlexOffset="2">
+  <div fxFlex>
     <md-card class="example-card">
       <md-card-header>
         <img md-card-avatar src="/assets/vbb.png">
@@ -7,7 +7,10 @@
         <md-card-subtitle>Öffentliche Verkehrsverbindungen</md-card-subtitle>
       </md-card-header>
       <div class="card-map" *ngIf="position">
-        <agm-map [latitude]="position.coords.latitude" [longitude]="position.coords.longitude" [disableDefaultUI]="false" [zoomControl]="false" [zoom]="13"></agm-map>
+        <agm-map [latitude]="position.coords.latitude" [longitude]="position.coords.longitude" [disableDefaultUI]="false" [zoomControl]="false" [zoom]="13">
+          <agm-marker [latitude]="position.coords.latitude" [longitude]="position.coords.longitude" [label]="'Ihr Standort'">
+      </agm-marker>
+        </agm-map>
       </div>
       <md-card-actions>
         <button md-button routerLink="/public-transport/routes">Verbindungssuche</button>

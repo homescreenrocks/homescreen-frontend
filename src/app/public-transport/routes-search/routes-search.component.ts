@@ -42,7 +42,7 @@ export class RoutesSearchComponent implements OnInit {
     const product: IProduct = {};
 
     route.parts.forEach(p => {
-      if (p.walking) {
+      if (p.type && p.type === 'walking') {
         product.walking = true;
         return;
       }
@@ -55,7 +55,7 @@ export class RoutesSearchComponent implements OnInit {
     return product;
   }
 
-  getDuration(start: Date, end: Date): string {
+  getDuration(start: number, end: number): number {
     return DurationService.getDuration(start, end);
   }
 

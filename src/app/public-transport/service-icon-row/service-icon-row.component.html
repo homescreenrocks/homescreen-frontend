@@ -1,7 +1,10 @@
-<img *ngIf="products && products.suburban" class="service-icon" src="/assets/service-icons/sbahn.jpg">
-<img *ngIf="products && products.subway" class="service-icon" src="/assets/service-icons/ubahn.jpg">
-<img *ngIf="products && products.tram" class="service-icon" src="/assets/service-icons/tram.jpg">
-<img *ngIf="products && products.bus" class="service-icon" src="/assets/service-icons/bus.jpg">
-<img *ngIf="products && products.ferry" class="service-icon" src="/assets/service-icons/ferry.jpg">
-<img *ngIf="products && products.express" class="service-icon" src="/assets/service-icons/express-bus.jpg">
-<img *ngIf="products && products.regional" class="service-icon" src="/assets/service-icons/bahn.jpg">
+<span class="service-icons" *ngIf="products">
+  <img *ngIf="products.suburban" src="/assets/service-icons/sbahn.jpg">
+  <img *ngIf="products.subway" src="/assets/service-icons/ubahn.jpg">
+  <img *ngIf="products.tram" src="/assets/service-icons/tram.jpg">
+  <img *ngIf="products.bus" src="/assets/service-icons/bus.jpg">
+  <img *ngIf="products.ferry" src="/assets/service-icons/ferry.jpg">
+  <img *ngIf="products.express" src="/assets/service-icons/express-bus.jpg">
+  <img *ngIf="products.regional" src="/assets/service-icons/bahn.jpg">
+  <img *ngIf="products.walking" src="/assets/service-icons/walking.png">
+</span>

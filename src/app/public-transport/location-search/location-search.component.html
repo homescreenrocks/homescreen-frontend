@@ -12,7 +12,7 @@
 
     <md-autocomplete #auto="mdAutocomplete" [displayWith]="displaySelectedLocation">
       <md-option *ngFor="let location of locationList$ | async as locationList" [value]="location">
-        {{ location.name }}
+        {{ location.name }} <hs-service-icon-row [products]="location?.products"></hs-service-icon-row>
       </md-option>
     </md-autocomplete>
   </md-card-content>
