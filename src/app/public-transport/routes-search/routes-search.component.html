@@ -9,34 +9,37 @@
 <p></p>
 <div fxLayout="row" fxLayoutAlign="space-between start" *ngIf="from && to">
   <div fxFlex="100">
-    <md-card *ngFor="let route of routes$ | async as routes; last as l; index as i; first as f">
-      <md-card-title *ngIf="f">Verbindungen</md-card-title>
-      <md-card-content>
+    <div *ngFor="let route of routes$ | async as routes; last as l; index as i; first as f">
+      <md-card>
+        <md-card-title *ngIf="f">Verbindungen</md-card-title>
+        <md-card-content>
 
-        <div fxLayout="row" (click)="showDetails(i)" [ngClass]="{'dashed': i == detailView}">
-          <div fxFlex="3" fxFlexAlign="center">
-            <i class="fa fa-2x fa-chevron-right red" *ngIf="i != detailView" aria-hidden="true"></i>
-            <i class="fa fa-2x fa-chevron-down red" *ngIf="i == detailView" aria-hidden="true"></i>
+          <div fxLayout="row" (click)="showDetails(i)" [ngClass]="{'dashed': i == detailView}">
+            <div fxFlex="3" fxFlexAlign="center">
+              <i class="fa fa-2x fa-chevron-right red" *ngIf="i != detailView" aria-hidden="true"></i>
+              <i class="fa fa-2x fa-chevron-down red" *ngIf="i == detailView" aria-hidden="true"></i>
+            </div>
+            <div fxFlex fxFlexAlign="center">
+              <h4>{{ route.from.name }}</h4>
+              <h4>{{ route.to.name }}</h4>
+            </div>
+            <div fxFlex="15" fxFlexAlign="center">
+              <p>ab {{ route.start | date:'shortTime' }}</p>
+              <p>an {{ route.end | date:'shortTime' }}</p>
+            </div>
+            <div fxFlex="15" fxFlexAlign="center">
+              <p>Dauer:</p>
+              <p>{{ getDuration(route.start, route.end) }} Min.</p>
+            </div>
+            <div fxFlex="20" fxFlexAlign="center">
+              <hs-service-icon-row [products]="getAllProducts(route)"></hs-service-icon-row>
+            </div>
           </div>
-          <div fxFlex fxFlexAlign="center">
-            <h4>{{ route.from.name }}</h4>
-            <h4>{{ route.to.name }}</h4>
-          </div>
-          <div fxFlex="15" fxFlexAlign="center">
-            <p>ab {{ route.start | date:'shortTime' }}</p>
-            <p>an {{ route.end | date:'shortTime' }}</p>
-          </div>
-          <div fxFlex="15" fxFlexAlign="center">
-            <p>Dauer:</p>
-            <p>{{ getDuration(route.start, route.end) }} Min.</p>
-          </div>
-          <div fxFlex="20" fxFlexAlign="center">
-            <hs-service-icon-row [products]="getAllProducts(route)"></hs-service-icon-row>
-          </div>
-        </div>
-        <hs-route-details *ngIf="i == detailView" [route]="route"></hs-route-details>
-      </md-card-content>
-    </md-card>
+          <hs-route-details *ngIf="i == detailView" [route]="route"></hs-route-details>
+        </md-card-content>
+      </md-card>
+      <br/>
+    </div>
   </div>
 </div>
 
