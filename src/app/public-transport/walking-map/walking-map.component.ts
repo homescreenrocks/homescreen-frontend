@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { ILocation } from '../shared/location';
 
@@ -7,13 +7,7 @@ import { ILocation } from '../shared/location';
   templateUrl: './walking-map.component.html',
   styleUrls: ['./walking-map.component.css']
 })
-export class WalkingMapComponent implements OnInit {
+export class WalkingMapComponent {
   @Input() from: ILocation;
   @Input() to: ILocation;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

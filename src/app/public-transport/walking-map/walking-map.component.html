@@ -1,5 +1,8 @@
 <h4>Fußweg</h4>
-<agm-map [latitude]="lat" [longitude]="lon">
+<agm-map [latitude]="(from.latitude + to.latitude)/2"
+         [longitude]="(from.longitude + to.longitude)/2"
+         [zoom]="15"
+         [ngStyle]="{ height: '300px', width: '90%'}">
   <agm-polyline>
     <agm-polyline-point [latitude]="from.latitude" [longitude]="from.longitude">
     </agm-polyline-point>
@@ -7,5 +10,3 @@
     </agm-polyline-point>
   </agm-polyline>
 </agm-map>
-From:<br/>{{ from | json }}
-To:  <br/>{{ to | json }}
