@@ -42,12 +42,12 @@ export class RoutesSearchComponent implements OnInit {
     const product: IProduct = {};
 
     route.parts.forEach(p => {
-      if (p.type && p.type === 'walking') {
+      if (p.mode && p.mode === 'walking') {
         product.walking = true;
         return;
       }
-      if (p.product && p.product.type && p.product.type.type) {
-        product[p.product.type.type] = true;
+      if (p.line && p.line.product) {
+        product[p.line.product] = true;
       }
 
     });
@@ -55,8 +55,8 @@ export class RoutesSearchComponent implements OnInit {
     return product;
   }
 
-  getDuration(start: number, end: number): number {
-    return DurationService.getDuration(start, end);
+  getDuration(departure: string, arrival: string): number {
+    return DurationService.getDuration(departure, arrival);
   }
 
 }

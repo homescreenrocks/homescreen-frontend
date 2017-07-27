@@ -1,12 +1,12 @@
 <h4>Fußweg</h4>
-<agm-map [latitude]="(from.latitude + to.latitude)/2"
-         [longitude]="(from.longitude + to.longitude)/2"
+<agm-map [latitude]="(origin.coordinates.latitude + destination.coordinates.latitude)/2"
+         [longitude]="(origin.coordinates.longitude + destination.coordinates.longitude)/2"
          [zoom]="15"
-         [ngStyle]="{ height: '300px', width: '90%'}">
+         [ngStyle]="{ height: '250px', width: '90%'}">
   <agm-polyline>
-    <agm-polyline-point [latitude]="from.latitude" [longitude]="from.longitude">
+    <agm-polyline-point [latitude]="origin.coordinates.latitude" [longitude]="origin.coordinates.longitude">
     </agm-polyline-point>
-    <agm-polyline-point [latitude]="to.latitude" [longitude]="to.longitude">
+    <agm-polyline-point [latitude]="destination.coordinates.latitude" [longitude]="destination.coordinates.longitude">
     </agm-polyline-point>
   </agm-polyline>
 </agm-map>

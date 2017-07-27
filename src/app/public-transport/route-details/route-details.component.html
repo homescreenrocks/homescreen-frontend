@@ -4,19 +4,19 @@
       <div class="timeline-content">
          <div fxLayout="row">
           <div fxFlex fxFlexAlign="center">
-            <h4 *ngIf="part.type !== 'walking'; else fromAddress">{{ part.from.name }}</h4>
+            <h4 *ngIf="part.mode !== 'walking'; else fromAddress">{{ part.origin.name }}</h4>
             <ng-template #fromAddress>
-              <hs-walking-map [from]="part.from" [to]="part.to"></hs-walking-map>
+              <hs-walking-map [origin]="part.origin" [destination]="part.destination"></hs-walking-map>
             </ng-template>
-            <h4>{{ part.to.name }}</h4>
+            <h4>{{ part.direction }}</h4>
           </div>
           <div fxFlex="15" fxFlexAlign="center">
-            <p>ab {{ part.start | date:'shortTime' }}</p>
-            <p>an {{ part.end | date:'shortTime' }}</p>
+            <p>ab {{ part.departure | date:'shortTime' }}</p>
+            <p>an {{ part.arrival | date:'shortTime' }}</p>
           </div>
           <div fxFlex="15" fxFlexAlign="center">
             <p>Dauer:</p>
-            <p>{{ getDuration(part.start, part.end) }} Min.</p>
+            <p>{{ getDuration(part.departure, part.arrival) }} Min.</p>
           </div>
           <div fxFlex="20" fxFlexAlign="center">
             <hs-service-icon-row [products]="getProduct(part)"></hs-service-icon-row>

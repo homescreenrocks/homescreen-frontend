@@ -8,6 +8,6 @@ import { ILocation } from '../shared/location';
   styleUrls: ['./walking-map.component.css']
 })
 export class WalkingMapComponent {
-  @Input() from: ILocation;
-  @Input() to: ILocation;
+  @Input() origin: ILocation;
+  @Input() destination: ILocation;
 }

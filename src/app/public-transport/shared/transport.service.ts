@@ -40,11 +40,13 @@ export class TransportService {
     let fromQuery = '';
     let toQuery = '';
 
+    console.log(from, to);
+
     // build query
     if (from.id) {
       fromQuery = `from=${from.id}`;
-    } else if (from.latitude && from.longitude) {
-      fromQuery = `from.latitude=${from.latitude}&from.longitude=${from.longitude}`;
+    } else if (from.coordinates.latitude && from.coordinates.longitude) {
+      fromQuery = `from.latitude=${from.coordinates.latitude}&from.longitude=${from.coordinates.longitude}`;
     } else {
       return Observable.throw(
         new Error('route from: neither location id nor geo coordinates received')
@@ -53,15 +55,15 @@ export class TransportService {
 
     if (to.id) {
       toQuery = `to=${to.id}`;
-    } else if (to.latitude && to.longitude) {
-      toQuery = `to.latitude=${to.latitude}&to.longitude=${to.longitude}`;
+    } else if (to.coordinates.latitude && to.coordinates.longitude) {
+      toQuery = `to.latitude=${to.coordinates.latitude}&to.longitude=${to.coordinates.longitude}`;
     } else {
       return Observable.throw(
         new Error('route to: neither location id nor geo coordinates received')
       );
     }
 
-    return this.http.get(`${this.api}/routes?${fromQuery}&${toQuery}`, this.options)
+    return this.http.get(`${this.api}/journeys?${fromQuery}&${toQuery}`, this.options)
       .map(res => res.json());
   }
 

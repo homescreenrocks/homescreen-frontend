@@ -18,19 +18,19 @@ export class RouteDetailsComponent implements OnInit {
     console.log(this.route);
   }
 
-  getDuration(start: number, end: number): number {
-    return DurationService.getDuration(start, end);
+  getDuration(departure: string, arrival: string): number {
+    return DurationService.getDuration(departure, arrival);
   }
 
   getProduct(part: IRoutePart): IProduct {
     const product: IProduct = {};
 
-    if (part.type === 'walking') {
+    if (part.mode === 'walking') {
       product.walking = true;
       return;
     }
-    if (part.product && part.product.type && part.product.type.type) {
-      product[part.product.type.type] = true;
+    if (part.line && part.line.product) {
+      product[part.line.product] = true;
     }
 
     return product;

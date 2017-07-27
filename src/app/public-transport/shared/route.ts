@@ -2,19 +2,31 @@ import { ILocation } from './location';
 import { IProductDetail } from './product-detail';
 
 export interface IRoute {
-  start: number;
-  end: number;
-  from: ILocation;
-  to: ILocation;
+  arrival: number;
+  departure: number;
+  origin: ILocation;
+  destination: ILocation;
   parts: Array<IRoutePart>;
 }
 
 export interface IRoutePart {
-  direction: string;
-  start: number;
-  end: number;
-  from: ILocation;
-  to: ILocation;
-  product?: IProductDetail;
-  type?: 'walking';
+  direction?: string;
+  departure: number;
+  arrival: number;
+  origin: ILocation;
+  destination: ILocation;
+  mode?: 'walking' | 'station';
+  parts: IRouteSubPart;
+  line?: IProductDetail;
+  alternatives?: IProductDetail[];
+}
+
+export interface IRouteSubPart {
+  direction?: string;
+  delay?: number;
+  id?: string;
+  departure: number;
+  arrival: number;
+  origin: ILocation;
+  destination: ILocation;
 }
