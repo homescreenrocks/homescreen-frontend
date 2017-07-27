@@ -9,7 +9,7 @@ import { ILocation } from './location';
 @Injectable()
 export class TransportService {
   private options: RequestOptions;
-  private api = 'https://transport.rest';
+  private api = 'https://vbb.transport.rest';
 
   constructor(private http: Http) {
     const headers = new Headers({
