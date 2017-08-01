@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'public-transport',
     loadChildren: 'app/public-transport/public-transport.module#PublicTransportModule'
+  },
+  {
+    path: 'gallery',
+    loadChildren: 'app/gallery/gallery.module#GalleryModule'
   }
 ];
 

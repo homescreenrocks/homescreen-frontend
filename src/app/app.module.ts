@@ -10,6 +10,7 @@ import 'hammerjs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { PublicTransportModule } from './public-transport/public-transport.module';
+import { GalleryModule } from './gallery/gallery.module';
 import { ModuleOverviewComponent } from './module-overview/module-overview.component';
 import { GeoLocationService } from './shared/geo-location.service';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { AppComponent } from './app.component';
       apiKey: 'AIzaSyBtI-4OZ7Kd4vNDGp-3d5rpATk8htQH6CQ'
     }),
     PublicTransportModule,
+    GalleryModule,
   ],
   providers: [GeoLocationService],
   bootstrap: [AppComponent]
