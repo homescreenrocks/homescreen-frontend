@@ -55,11 +55,4 @@ export class RoutesSearchComponent implements OnInit {
     return DurationService.getDuration(departure, arrival);
   }
 
-  hasWalkingPart(parts: IRoutePart[]): boolean {
-    const index = parts.findIndex(part => {
-      if (part.mode && part.mode === 'walking') { return true; }
-    })
-    return index !== -1 ? true : false;
-  }
-
 }

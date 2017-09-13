@@ -9,6 +9,7 @@ export class AppComponent {
   navLinks = [
     { label: 'Home', href: 'home' },
     { label: 'VBB Fahrinfo', href: 'public-transport' },
-    { label: 'Gallerie', href: 'gallery' }
+    { label: 'Gallerie', href: 'gallery' },
+    { label: 'Hue Control', href: 'hue-control' }
   ];
 }

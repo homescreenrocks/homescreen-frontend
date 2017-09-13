@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'gallery',
     loadChildren: 'app/gallery/gallery.module#GalleryModule'
+  },
+  {
+    path: 'hue-control',
+    loadChildren: 'app/hue-control/hue-control.module#HueControlModule'
   }
 ];
 

@@ -25,6 +25,7 @@
     "@angular/platform-browser": "^4.3.6",
     "@angular/platform-browser-dynamic": "^4.3.6",
     "@angular/router": "^4.3.6",
+    "@schematics/angular": "0.0.34",
     "angular-modal-gallery": "^3.3.3",
     "core-js": "^2.5.1",
     "font-awesome": "^4.7.0",
