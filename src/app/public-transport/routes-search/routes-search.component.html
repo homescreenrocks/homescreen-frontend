@@ -12,21 +12,25 @@
     <md-expansion-panel *ngFor="let route of routes$ | async as routes; last as l; index as i; first as f" [expanded]="f" hideToggle="true">
       <md-expansion-panel-header>
         <md-panel-title>
-          <h4>{{ route.origin.name }} -> {{ route.destination.name }}</h4>
+          <h4>{{ route.origin.name }}</h4>
+        </md-panel-title>
+        <md-panel-title>
+          <h4>{{ route.destination.name }}</h4>
         </md-panel-title>
         <md-panel-description>
-          Dauer: {{ getDuration(route.departure, route.arrival) }}
           ab {{ route.departure | date:'shortTime' }}
+        </md-panel-description>
+        <md-panel-description>
           an {{ route.arrival | date:'shortTime' }}
+        </md-panel-description>
+        <md-panel-description>
+          Dauer: {{ getDuration(route.departure, route.arrival) }}
           <hs-service-icon-row [products]="getAllProducts(route)"></hs-service-icon-row>
         </md-panel-description>
       </md-expansion-panel-header>
 
       <hs-route-details [route]="route"></hs-route-details>
 
-      <!--<md-action-row>
-        <button md-button color="primary" (click)="nextStep()">Nächste</button>
-      </md-action-row>-->
     </md-expansion-panel>
   </md-accordion>
 </div>

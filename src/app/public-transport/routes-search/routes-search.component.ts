@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { TransportService } from '../shared/transport.service';
 import { ILocation } from '../shared/location';
-import { IRoute } from '../shared/route';
+import { IRoute, IRoutePart } from '../shared/route';
 import { IProduct } from '../shared/product';
 import { DurationService } from '../shared/duration.service';
 
@@ -53,6 +53,13 @@ export class RoutesSearchComponent implements OnInit {
 
   getDuration(departure: string, arrival: string): number {
     return DurationService.getDuration(departure, arrival);
+  }
+
+  hasWalkingPart(parts: IRoutePart[]): boolean {
+    const index = parts.findIndex(part => {
+      if (part.mode && part.mode === 'walking') { return true; }
+    })
+    return index !== -1 ? true : false;
   }
 
 }

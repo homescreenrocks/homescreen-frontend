@@ -1,4 +1,5 @@
 .service-icons > img {
-  width: 40px;
+  width: 35px;
+  padding: 5px;
   float: right;
 }
