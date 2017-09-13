@@ -3,7 +3,22 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from '@angular/material';
+import {
+  MdListModule,
+  MdTooltipModule,
+  MdOptionModule,
+  MdSelectModule,
+  MdMenuModule,
+  MdSnackBarModule,
+  MdGridListModule,
+  MdToolbarModule,
+  MdIconModule,
+  MdButtonModule,
+  MdRadioModule,
+  MdCheckboxModule,
+  MdCardModule,
+  MdTabsModule
+} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
 import 'hammerjs';
@@ -27,7 +42,20 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     AppRoutingModule,
-    MaterialModule,
+    MdListModule,
+    MdTooltipModule,
+    MdOptionModule,
+    MdSelectModule,
+    MdMenuModule,
+    MdSnackBarModule,
+    MdGridListModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdButtonModule,
+    MdRadioModule,
+    MdCheckboxModule,
+    MdCardModule,
+    MdTabsModule,
     FlexLayoutModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBtI-4OZ7Kd4vNDGp-3d5rpATk8htQH6CQ'

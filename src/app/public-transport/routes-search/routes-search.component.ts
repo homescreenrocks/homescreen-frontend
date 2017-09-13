@@ -34,10 +34,6 @@ export class RoutesSearchComponent implements OnInit {
     this.routes$ = this.ts.searchForRoutes(this.from, this.to);
   }
 
-  showDetails(i: number) {
-    this.detailView = this.detailView === i ? null : i;
-  }
-
   getAllProducts(route: IRoute): IProduct {
     const product: IProduct = {};
 

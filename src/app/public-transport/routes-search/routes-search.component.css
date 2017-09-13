@@ -18,3 +18,13 @@ span.arrival{
 .dashed {
   border-bottom: 2px dotted #333333;
 }
+
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}

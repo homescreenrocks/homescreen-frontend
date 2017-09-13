@@ -2,7 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+import {
+  MdListModule,
+  MdTooltipModule,
+  MdOptionModule,
+  MdSelectModule,
+  MdMenuModule,
+  MdSnackBarModule,
+  MdGridListModule,
+  MdToolbarModule,
+  MdIconModule,
+  MdButtonModule,
+  MdRadioModule,
+  MdInputModule,
+  MdCheckboxModule,
+  MdCardModule,
+  MdAutocompleteModule,
+  MdExpansionModule,
+  MdTabsModule
+} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
 
@@ -21,7 +39,23 @@ import { DepartureSearchComponent } from './departure-search/departure-search.co
     CommonModule,
     ReactiveFormsModule,
     HttpModule,
-    MaterialModule,
+    MdListModule,
+    MdTooltipModule,
+    MdOptionModule,
+    MdSelectModule,
+    MdMenuModule,
+    MdSnackBarModule,
+    MdGridListModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdButtonModule,
+    MdInputModule,
+    MdRadioModule,
+    MdCheckboxModule,
+    MdCardModule,
+    MdAutocompleteModule,
+    MdExpansionModule,
+    MdTabsModule,
     FlexLayoutModule,
     PublicTransportRoutingModule,
     AgmCoreModule.forRoot({
