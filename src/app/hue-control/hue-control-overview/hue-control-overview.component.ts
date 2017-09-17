@@ -29,7 +29,6 @@ export class HueControlOverviewComponent implements OnInit {
   }
 
   onOff(change: MdSlideToggleChange, lightId: number) {
-    console.log(change, lightId);
     const stateConfig = {
       on: change.checked
     };
@@ -39,9 +38,7 @@ export class HueControlOverviewComponent implements OnInit {
   }
 
   save(lightId: number, cm: string) {
-    console.log(lightId, cm);
     const l = this.lights.find(light => light.id === lightId);
-    console.log(l);
 
     const stateConfig = {
       on: true,
