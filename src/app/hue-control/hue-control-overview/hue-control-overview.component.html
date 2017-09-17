@@ -1,4 +1,57 @@
-<p>
-  hue-control-overview works!
-</p>
- {{ data | json }}
+<md-accordion [multi]="true">
+  <md-expansion-panel [expanded]="step === 0"
+                      hideToggle="true"
+                      *ngFor="let light of lights"
+                      [disabled]="!light.state.reachable">
+    <md-expansion-panel-header>
+      <md-panel-title>
+        <h3>{{ light.name }}</h3>
+      </md-panel-title>
+
+      <md-panel-description>
+        <md-icon [color]="light.state.on ? 'primary' : 'warn'" *ngIf="light.state.reachable">lightbulb_outline</md-icon>
+        <md-icon *ngIf="!light.state.reachable">highlight_off</md-icon>
+      </md-panel-description>
+
+    </md-expansion-panel-header>
+
+    <md-slide-toggle [checked]="light.state.on"
+                    (change)="onOff($event, light.id)">Status</md-slide-toggle>
+
+    <div *ngIf="light.state.on">
+
+      <h3>Einstellungen</h3>
+
+      <md-radio-group [(ngModel)]="colorModel">
+        <md-radio-button value="color" [disabled]="!(light.state.sat && light.state.hue)">Farbe</md-radio-button>
+        <md-radio-button value="temperature">Termperatur</md-radio-button>
+      </md-radio-group>
+
+      <div *ngIf="colorModel === 'color'">
+        <h4>Farbton</h4>
+        <md-slider [min]="0" [max]="65536" [step]="1" [(ngModel)]="light.state.hue"></md-slider>
+
+        <h4>Sättigung</h4>
+        <md-slider [min]="0" [max]="255" [step]="1" [(ngModel)]="light.state.sat"></md-slider>
+      </div>
+
+      <div *ngIf="colorModel === 'temperature'">
+          <h4>Farbtemperatur</h4>
+          <md-slider [min]="153" [max]="500" [step]="1" [(ngModel)]="light.state.ct"></md-slider>
+      </div>
+
+      <div *ngIf="light.state.bri">
+        <h4>Helligkeit</h4>
+        <md-slider [min]="0" [max]="255" [step]="1" [(ngModel)]="light.state.bri"></md-slider>
+      </div>
+    </div>
+
+    <md-action-row>
+      <button md-button color="primary" (click)="save(light.id, colorModel)">Speichern</button>
+    </md-action-row>
+
+  </md-expansion-panel>
+
+</md-accordion>
+
+ {{ lights | json }}
