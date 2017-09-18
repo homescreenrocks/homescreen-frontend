@@ -1,6 +1,6 @@
 {
-  "name": "homescreen",
-  "version": "0.0.1",
+  "name": "homescreen-frontend",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
