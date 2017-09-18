@@ -4,22 +4,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   MdListModule,
-  MdTooltipModule,
   MdOptionModule,
   MdSelectModule,
-  MdMenuModule,
-  MdSnackBarModule,
-  MdGridListModule,
-  MdToolbarModule,
   MdIconModule,
   MdButtonModule,
-  MdRadioModule,
   MdInputModule,
   MdCheckboxModule,
   MdCardModule,
   MdAutocompleteModule,
-  MdExpansionModule,
-  MdTabsModule
+  MdExpansionModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
@@ -40,22 +33,15 @@ import { DepartureSearchComponent } from './departure-search/departure-search.co
     ReactiveFormsModule,
     HttpModule,
     MdListModule,
-    MdTooltipModule,
     MdOptionModule,
     MdSelectModule,
-    MdMenuModule,
-    MdSnackBarModule,
-    MdGridListModule,
-    MdToolbarModule,
     MdIconModule,
     MdButtonModule,
     MdInputModule,
-    MdRadioModule,
     MdCheckboxModule,
     MdCardModule,
     MdAutocompleteModule,
     MdExpansionModule,
-    MdTabsModule,
     FlexLayoutModule,
     PublicTransportRoutingModule,
     AgmCoreModule.forRoot({

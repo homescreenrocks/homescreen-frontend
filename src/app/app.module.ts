@@ -4,18 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MdListModule,
-  MdTooltipModule,
-  MdOptionModule,
-  MdSelectModule,
   MdMenuModule,
-  MdSnackBarModule,
-  MdGridListModule,
-  MdToolbarModule,
   MdIconModule,
   MdButtonModule,
-  MdRadioModule,
-  MdCheckboxModule,
   MdCardModule,
   MdTabsModule
 } from '@angular/material';
@@ -42,21 +33,11 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     AppRoutingModule,
-    MdListModule,
-    MdTooltipModule,
-    MdOptionModule,
-    MdSelectModule,
     MdMenuModule,
-    MdSnackBarModule,
-    MdGridListModule,
-    MdToolbarModule,
     MdIconModule,
     MdButtonModule,
-    MdRadioModule,
-    MdCheckboxModule,
     MdCardModule,
     MdTabsModule,
-    FlexLayoutModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBtI-4OZ7Kd4vNDGp-3d5rpATk8htQH6CQ'
     }),
