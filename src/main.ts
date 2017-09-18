@@ -8,5 +8,10 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic([
+  {
+    provide: 'HUE_BRIDGE_API_URL',
+    useValue: environment.hueBridgeApiURL
+  }
+]).bootstrapModule(AppModule)
   .catch(err => console.log(err));

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  hueBridgeApiURL: 'http://YOUR-PRODUCTION-API-URL/api'
 };

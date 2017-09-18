@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
@@ -8,10 +8,10 @@ import { ILightList, ILight } from './lights';
 
 @Injectable()
 export class HueConnectService {
-  private api = 'http://192.168.2.100/api';
   private username = '4JOBPVSlXXUuKHZYALuJ5o-HaGxwdTcT73cVCLpu';
 
   constructor(
+    @Inject('HUE_BRIDGE_API_URL') private api: string,
     private http: Http
   ) { }
 

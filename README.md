@@ -1,6 +1,8 @@
-# Homescreen
+# Homescreen Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+## Before Start
+* adjust the config file in `src/environment/environment.dev.ts` to your local settings.
+* run `npm install` in your terminal
 
 ## Development server
 
