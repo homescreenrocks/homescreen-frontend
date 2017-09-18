@@ -11,7 +11,11 @@ if (environment.production) {
 platformBrowserDynamic([
   {
     provide: 'HUE_BRIDGE_API_URL',
-    useValue: environment.hueBridgeApiURL
+    useValue: environment.hueConfig.apiURL
+  },
+  {
+    provide: 'HUE_USERNAME',
+    useValue: environment.hueConfig.username
   }
 ]).bootstrapModule(AppModule)
   .catch(err => console.log(err));

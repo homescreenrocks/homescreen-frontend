@@ -8,10 +8,9 @@ import { ILightList, ILight } from './lights';
 
 @Injectable()
 export class HueConnectService {
-  private username = '4JOBPVSlXXUuKHZYALuJ5o-HaGxwdTcT73cVCLpu';
-
   constructor(
     @Inject('HUE_BRIDGE_API_URL') private api: string,
+    @Inject('HUE_USERNAME') private username: string,
     private http: Http
   ) { }
 
