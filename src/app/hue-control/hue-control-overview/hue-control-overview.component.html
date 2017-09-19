@@ -24,7 +24,8 @@
 
       <md-radio-group [(ngModel)]="colorModel">
         <md-radio-button value="color" [disabled]="!(light.state.sat && light.state.hue)">Farbe</md-radio-button>
-        <md-radio-button value="temperature">Termperatur</md-radio-button>
+        <md-radio-button value="colorloop" [disabled]="!(light.state.sat && light.state.hue)">Farbwechsel</md-radio-button>
+        <md-radio-button value="temperature">Temperatur</md-radio-button>
       </md-radio-group>
 
       <div *ngIf="colorModel === 'color'">

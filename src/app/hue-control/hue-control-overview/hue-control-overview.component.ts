@@ -11,7 +11,7 @@ import { ILight } from '../shared/lights';
 })
 export class HueControlOverviewComponent implements OnInit {
   public lights: ILight[];
-  public colorModel: 'color' | 'temperature' = null;
+  public colorModel: 'color' | 'temperature' | 'colorloop' = null;
 
   constructor(
     private hcs: HueConnectService
@@ -45,7 +45,8 @@ export class HueControlOverviewComponent implements OnInit {
       bri: l.state.bri,
       ct: null,
       hue: null,
-      sat: null
+      sat: null,
+      effect: 'none'
     };
 
     if (cm === 'temperature') {
@@ -55,6 +56,10 @@ export class HueControlOverviewComponent implements OnInit {
     if (cm === 'color') {
       stateConfig.hue = l.state.hue;
       stateConfig.sat = l.state.sat;
+    }
+
+    if (cm === 'colorloop') {
+      stateConfig.effect = 'colorloop';
     }
 
     this.hcs.setLightValue(lightId, stateConfig)
