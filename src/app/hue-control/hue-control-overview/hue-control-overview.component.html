@@ -1,6 +1,5 @@
 <mat-accordion [multi]="true">
-  <mat-expansion-panel [expanded]="step === 0"
-                      hideToggle="true"
+  <mat-expansion-panel hideToggle="true"
                       *ngFor="let light of lights"
                       [disabled]="!light.state.reachable">
     <mat-expansion-panel-header>

@@ -23,9 +23,9 @@ export class HueControlOverviewComponent implements OnInit {
 
   getLightStates() {
     this.hcs.getLights()
-    .subscribe(lights => {
-      this.lights = lights;
-    });
+      .subscribe(lights => {
+        this.lights = lights;
+      });
   }
 
   onOff(change: MatSlideToggleChange, lightId: number) {
@@ -34,7 +34,7 @@ export class HueControlOverviewComponent implements OnInit {
     };
 
     this.hcs.setLightValue(lightId, stateConfig)
-      .subscribe(res => this.getLightStates());
+      .subscribe(res => res);
   }
 
   save(lightId: number, cm: string) {
