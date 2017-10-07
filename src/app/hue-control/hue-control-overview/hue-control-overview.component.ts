@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdSlideToggleChange } from '@angular/material';
+import { MatSlideToggleChange } from '@angular/material';
 
 import { HueConnectService } from '../shared/hue-connect.service';
 import { ILight } from '../shared/lights';
@@ -28,7 +28,7 @@ export class HueControlOverviewComponent implements OnInit {
     });
   }
 
-  onOff(change: MdSlideToggleChange, lightId: number) {
+  onOff(change: MatSlideToggleChange, lightId: number) {
     const stateConfig = {
       on: change.checked
     };

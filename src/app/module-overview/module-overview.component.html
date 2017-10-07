@@ -1,31 +1,31 @@
 <div fxLayout="row" class="colored box">
   <div fxFlex>
-    <md-card class="example-card">
-      <md-card-header>
-        <img md-card-avatar src="/assets/vbb.png">
-        <md-card-title>VBB Fahrinfo</md-card-title>
-        <md-card-subtitle>Öffentliche Verkehrsverbindungen</md-card-subtitle>
-      </md-card-header>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <img mat-card-avatar src="/assets/vbb.png">
+        <mat-card-title>VBB Fahrinfo</mat-card-title>
+        <mat-card-subtitle>Öffentliche Verkehrsverbindungen</mat-card-subtitle>
+      </mat-card-header>
       <div class="card-map" *ngIf="position">
         <agm-map [latitude]="position.coords.latitude" [longitude]="position.coords.longitude" [disableDefaultUI]="false" [zoomControl]="false" [zoom]="13">
           <agm-marker [latitude]="position.coords.latitude" [longitude]="position.coords.longitude" [label]="'Ihr Standort'">
       </agm-marker>
         </agm-map>
       </div>
-      <md-card-actions>
-        <button md-button routerLink="/public-transport/routes">Verbindungssuche</button>
-        <button md-button routerLink="/public-transport/departures">Abfahrtsmonitor</button>
-      </md-card-actions>
-    </md-card>
-    <md-card class="example-card">
-      <md-card-header>
-        <img md-card-avatar src="/assets/cam.png">
-        <md-card-title>Gallerie</md-card-title>
-        <md-card-subtitle>Fotos und Videos</md-card-subtitle>
-      </md-card-header>
-      <md-card-actions>
-        <button md-button routerLink="/gallery">Zur Gallerie</button>
-      </md-card-actions>
-    </md-card>
+      <mat-card-actions>
+        <button mat-button routerLink="/public-transport/routes">Verbindungssuche</button>
+        <button mat-button routerLink="/public-transport/departures">Abfahrtsmonitor</button>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <img mat-card-avatar src="/assets/cam.png">
+        <mat-card-title>Gallerie</mat-card-title>
+        <mat-card-subtitle>Fotos und Videos</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-button routerLink="/gallery">Zur Gallerie</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

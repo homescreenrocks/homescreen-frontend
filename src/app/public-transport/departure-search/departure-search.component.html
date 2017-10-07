@@ -2,9 +2,9 @@
 
 <div fxLayout="row" fxLayoutAlign="space-between start" *ngIf="from && to">
   <div fxFlex="100">
-    <md-card *ngFor="let dep of departures">
-      <md-card-title *ngIf="f">Verbindungen</md-card-title>
-      <md-card-content>
+    <mat-card *ngFor="let dep of departures">
+      <mat-card-title *ngIf="f">Verbindungen</mat-card-title>
+      <mat-card-content>
 <!--
         <div fxLayout="row" (click)="showDetails(i)" [ngClass]="{'dashed': i == detailView}">
           <div fxFlex="3" fxFlexAlign="center">
@@ -28,7 +28,7 @@
           </div>
         </div>-->
         <!--<hs-dep-details *ngIf="i == detailView" [dep]="dep"></hs-dep-details>-->
-      </md-card-content>
-    </md-card>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>

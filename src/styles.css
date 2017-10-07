@@ -2,6 +2,6 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import '~font-awesome/css/font-awesome.css';
 
-md-card-title {
+mat-card-title {
   font-size: 20px !important;
 }

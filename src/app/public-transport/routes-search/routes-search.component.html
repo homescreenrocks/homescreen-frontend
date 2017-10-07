@@ -8,31 +8,31 @@
 </div>
 <p></p>
 <div *ngIf="from && to">
-  <md-accordion>
-    <md-expansion-panel *ngFor="let route of routes$ | async as routes; last as l; index as i; first as f" [expanded]="f" hideToggle="true">
-      <md-expansion-panel-header>
-        <md-panel-title>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let route of routes$ | async as routes; last as l; index as i; first as f" [expanded]="f" hideToggle="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
           <h4>{{ route.origin.name }}</h4>
-        </md-panel-title>
-        <md-panel-title>
+        </mat-panel-title>
+        <mat-panel-title>
           <h4>{{ route.destination.name }}</h4>
-        </md-panel-title>
-        <md-panel-description>
+        </mat-panel-title>
+        <mat-panel-description>
           ab {{ route.departure | date:'shortTime' }}
-        </md-panel-description>
-        <md-panel-description>
+        </mat-panel-description>
+        <mat-panel-description>
           an {{ route.arrival | date:'shortTime' }}
-        </md-panel-description>
-        <md-panel-description>
+        </mat-panel-description>
+        <mat-panel-description>
           Dauer: {{ getDuration(route.departure, route.arrival) }}
           <hs-service-icon-row [products]="getAllProducts(route)"></hs-service-icon-row>
-        </md-panel-description>
-      </md-expansion-panel-header>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
 
       <hs-route-details [route]="route"></hs-route-details>
 
-    </md-expansion-panel>
-  </md-accordion>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
 
 

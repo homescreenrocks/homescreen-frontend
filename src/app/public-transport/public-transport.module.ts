@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
-  MdListModule,
-  MdOptionModule,
-  MdSelectModule,
-  MdIconModule,
-  MdButtonModule,
-  MdInputModule,
-  MdCheckboxModule,
-  MdCardModule,
-  MdAutocompleteModule,
-  MdExpansionModule
+  MatListModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatIconModule,
+  MatButtonModule,
+  MatInputModule,
+  MatCheckboxModule,
+  MatCardModule,
+  MatAutocompleteModule,
+  MatExpansionModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
@@ -32,16 +32,16 @@ import { DepartureSearchComponent } from './departure-search/departure-search.co
     CommonModule,
     ReactiveFormsModule,
     HttpModule,
-    MdListModule,
-    MdOptionModule,
-    MdSelectModule,
-    MdIconModule,
-    MdButtonModule,
-    MdInputModule,
-    MdCheckboxModule,
-    MdCardModule,
-    MdAutocompleteModule,
-    MdExpansionModule,
+    MatListModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatIconModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatAutocompleteModule,
+    MatExpansionModule,
     FlexLayoutModule,
     PublicTransportRoutingModule,
     AgmCoreModule.forRoot({

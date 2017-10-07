@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MdMenuModule,
-  MdIconModule,
-  MdButtonModule,
-  MdCardModule,
-  MdTabsModule
+  MatMenuModule,
+  MatIconModule,
+  MatButtonModule,
+  MatCardModule,
+  MatTabsModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
@@ -33,11 +33,11 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     AppRoutingModule,
-    MdMenuModule,
-    MdIconModule,
-    MdButtonModule,
-    MdCardModule,
-    MdTabsModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatTabsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBtI-4OZ7Kd4vNDGp-3d5rpATk8htQH6CQ'
     }),
