@@ -23,32 +23,28 @@
 
       <mat-radio-group [(ngModel)]="colorModel">
         <mat-radio-button value="color" [disabled]="!(light.state.sat && light.state.hue)">Farbe</mat-radio-button>
-        <mat-radio-button value="colorloop" [disabled]="!(light.state.sat && light.state.hue)">Farbwechsel</mat-radio-button>
+        <mat-radio-button value="colorloop" [disabled]="!(light.state.sat && light.state.hue)" (change)="save(light.id, 'colorloop')">Farbwechsel</mat-radio-button>
         <mat-radio-button value="temperature">Temperatur</mat-radio-button>
       </mat-radio-group>
 
       <div *ngIf="colorModel === 'color'">
         <h4>Farbton</h4>
-        <mat-slider [min]="0" [max]="65536" [step]="1" [(ngModel)]="light.state.hue"></mat-slider>
+        <mat-slider [min]="0" [max]="65536" [step]="1" [(ngModel)]="light.state.hue" (change)="save(light.id, colorModel)"></mat-slider>
 
         <h4>Sättigung</h4>
-        <mat-slider [min]="0" [max]="255" [step]="1" [(ngModel)]="light.state.sat"></mat-slider>
+        <mat-slider [min]="0" [max]="255" [step]="1" [(ngModel)]="light.state.sat" (change)="save(light.id, colorModel)"></mat-slider>
       </div>
 
       <div *ngIf="colorModel === 'temperature'">
           <h4>Farbtemperatur</h4>
-          <mat-slider [min]="153" [max]="500" [step]="1" [(ngModel)]="light.state.ct"></mat-slider>
+          <mat-slider [min]="153" [max]="500" [step]="1" [(ngModel)]="light.state.ct" (change)="save(light.id, colorModel)"></mat-slider>
       </div>
 
       <div *ngIf="light.state.bri">
         <h4>Helligkeit</h4>
-        <mat-slider [min]="0" [max]="255" [step]="1" [(ngModel)]="light.state.bri"></mat-slider>
+        <mat-slider [min]="0" [max]="255" [step]="1" [(ngModel)]="light.state.bri" (change)="save(light.id, colorModel)"></mat-slider>
       </div>
     </div>
-
-    <mat-action-row>
-      <button mat-button color="primary" (click)="save(light.id, colorModel)">Speichern</button>
-    </mat-action-row>
 
   </mat-expansion-panel>
 
